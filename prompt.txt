@@ -2,7 +2,7 @@
 Я не программист. Делай всё сам; перед установкой программ одной фразой скажи, что ставишь, и жди «да».
 Если какой-то шаг не получился — не останавливайся, переходи к следующему, а в конце скажи, что не вышло.
 
-1. Определи систему (Windows или macOS). Проверь, есть ли Git, Python 3, Node.js (LTS), ffmpeg и LibreOffice.
+1. Определи систему (Windows или macOS). Проверь, есть ли Git, Python 3, Node.js 22 или новее, ffmpeg и LibreOffice.
    Покажи список недостающего и после «да» установи (Windows — winget, macOS — Homebrew).
 2. Скиллы для файлов и дизайна от Anthropic: скачай репозиторий https://github.com/anthropics/skills во временную папку
    и скопируй в ~/.claude/skills папки pptx, docx, xlsx, pdf, frontend-design, canvas-design и theme-factory
@@ -12,13 +12,16 @@
 4. Дизайн-скиллы для сайтов и слайдов: ui-ux-pro-max, taste-skill и impeccable. Найди их официальные репозитории
    на GitHub (ui-ux-pro-max — nextlevelbuilder/ui-ux-pro-max-skill, taste-skill — Leonxlnx/taste-skill,
    impeccable — pbakaus/impeccable; если адрес не открывается — найди поиском и проверь по описанию и звёздам)
-   и установи как сказано в их README.
+   и установи как сказано в их README (для taste-skill: npx skills add https://github.com/Leonxlnx/taste-skill -g -a claude-code;
+   для impeccable: npx impeccable install; для ui-ux-pro-max: npx ui-ux-pro-max-cli init --ai claude --global).
 5. Плагины Anthropic: если в терминале доступна команда claude — выполни
    claude plugin install superpowers@claude-plugins-official  и  claude plugin install frontend-design@claude-plugins-official.
    Если команды нет — в конце попроси меня ввести эти две строки сам, начиная с /plugin install.
-6. Озвучка: pip install edge-tts и сделай пробную фразу голосом ru-RU-SvetlanaNeural.
+6. Озвучка: pip install -U edge-tts и сделай пробную фразу голосом ru-RU-SvetlanaNeural.
 7. Картинки: проверь два бесплатных способа — поиск фото без ключа (Openverse API, api.openverse.org) и генерацию
-   картинки по тексту бесплатным сервисом без ключа (например Pollinations). Сделай по одной пробной картинке.
+   фото из Wikimedia Commons (без ключа). Сделай по одной пробной картинке. Бесплатной генерации картинок по тексту
+   без ключа надёжной нет: проверь Pollinations — если требует ключ или деньги, не настраивай, а запиши, что иллюстрации
+   рисуешь кодом (SVG, схемы) или беру фото.
    Что сработало — запиши в раздел «Сервисы» моих правил с готовыми командами, что не сработало — тоже отметь.
 8. Мои правила: запиши текст из блока «CLAUDE.md» ниже в ~/.claude/CLAUDE.md (в Windows C:\Users\<имя>\.claude\CLAUDE.md).
    Если файл уже есть — сохрани старый как CLAUDE.md.bak и объедини.
@@ -57,7 +60,7 @@
 1. Фото по теме из бесплатных фотобанков (Openverse, Wikimedia Commons, Unsplash, Pexels): скачай файл, проверь,
    что лицензия разрешает такое использование, и запиши источник в `images/источники.txt`.
 2. Схемы, графики, иконки, обложки, инфографику — нарисуй сам кодом (SVG, HTML, Python) в моих цветах.
-3. Иллюстрацию по описанию — сгенерируй бесплатным сервисом по тексту (см. раздел «Сервисы» ниже) и проверь глазами,
+3. Иллюстрацию по описанию — сгенерируй бесплатным сервисом по тексту (если в разделе «Сервисы» есть рабочий способ; если нет — рисуй кодом) и проверь глазами,
    что на ней нет кривых рук, лиц и текста-каши. Плохую — перегенерируй.
 Каждую картинку сохраняй в папку `images/` рядом с работой. В презентации у каждого слайда должна быть картинка,
 схема или крупная цифра, а не только текст.
